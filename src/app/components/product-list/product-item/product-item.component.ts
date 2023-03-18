@@ -1,6 +1,8 @@
-import { Input } from '@angular/core'
+import { Input, Output, EventEmitter } from '@angular/core'
 import { Component } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { Cart } from 'src/app/models/Cart';
+import { CartService } from '../../../services/cart/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -8,9 +10,13 @@ import { Product } from 'src/app/models/Product';
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
+  cart: Cart;
+  quantity: number = 0;
   @Input() product: Product;
+  // @Output()
+  // Carts: EventEmitter<any> = new EventEmitter
 
-  constructor() {
+  constructor(private cartService: CartService) {
 
     this.product = {
         id: 1,
@@ -19,8 +25,20 @@ export class ProductItemComponent {
         url: '',
         description: ''
     }
+    this.cart = {
+      id: 1,
+      name: '',
+      price: 1,
+      url: '',
+      description: '',
+      quantity: 1,
+  }
   }
   ngOnInit(): void {
 
+  }
+  addToCart(quantity: number): void {
+    alert('Added to cart')
+    this.cartService.addToCart(quantity, this.product)
   }
 }

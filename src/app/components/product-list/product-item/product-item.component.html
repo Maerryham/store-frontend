@@ -1,13 +1,16 @@
-<div class="product-container">
+<form class="product-container">
     <div class="product-image">
-        <img src="{{ product.url }}" alt="placeholder">
+        
+        <img [routerLink]="['/product', product.id]" routerLinkActive="router-link-active" [src]="product.url" alt="Product Image">
     </div>
     <div class="product-detail">
         <p>{{ product.name }}</p>
         <p>${{ product.price }}</p>
-        <select class="select-input">
-            <option>0</option>
+
+        <select class="select-input" name="quantity"  [(ngModel)]="quantity">
+            <option [selected]="i === quantity" *ngFor="let item of [].constructor(5); let i = index">{{ i }}</option>
         </select>
-        <button type="submit">Add to Cart</button>
+                
+        <button (click)="addToCart(+quantity)">Add to Cart</button>
     </div>    
-</div>
+</form>

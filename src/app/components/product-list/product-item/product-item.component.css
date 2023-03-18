@@ -4,6 +4,7 @@
     padding: 20px;
     margin: 6px 6px;        
     border: 1px solid #33B5E5;
+    cursor: pointer;
   } 
   .product-image img {
     max-width: 100%;
@@ -28,4 +29,7 @@
     margin-bottom: 8px;
     padding: 10px 20px; 
     display: block;
+  }
+  .hidden{
+    display: none;
   }

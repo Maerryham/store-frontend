@@ -1,14 +1,15 @@
-<img src="./imageLink" alt="product"/>
 <div class="detail-container">
+    <img [src]="product?.url" alt="Product Image" alt="product"/>
+
     <div class="detail-item">
-        <h5>Backpack</h5>
-        <p>$500</p>
-        <p>Carry things around</p>
-        <select class="select-input">
-            <option value="0">0</option>
+        <h1>{{ product?.name }}</h1>
+        <p>${{ product?.price }}</p>
+        <p>{{ product?.description }}</p>
+        <select class="select-input" name="quantity"  [(ngModel)]="quantity">
+            <option [selected]="i === quantity" *ngFor="let item of [].constructor(10); let i = index">{{ i }}</option>
         </select>
-        <button type="submit">Add to Cart</button>
-        <p class="back-link">Back to Product List</p>
+                
+        <button (click)="addToCart(+quantity)">Add to Cart</button>
     </div>
 </div>
 

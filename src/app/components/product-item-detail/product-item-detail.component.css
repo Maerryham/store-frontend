@@ -2,7 +2,16 @@ img {
     border-radius: 10px;
     width: 320px;
   }
-  
+
+  button { 
+    background-color: blue; 
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 8px;
+  }
    
   .select-input {
     width: 108px; 
@@ -10,6 +19,7 @@ img {
     padding: 10px 20px; 
     display: block;
   }
+  
   
   .detail-container {
     display: flex;
@@ -24,6 +34,6 @@ img {
   }
   
   .back-link {
-    margin-top: 8px;
+    margin-top: 20px;
     color: #33B5E5;
   }
