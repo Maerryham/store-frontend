@@ -3,9 +3,12 @@ img {
     width: 320px;
   }
   
+   
   .select-input {
     width: 108px; 
     margin-bottom: 8px;
+    padding: 10px 20px; 
+    display: block;
   }
   
   .detail-container {
