@@ -11,4 +11,12 @@ export class UserService {
     cardNumber: 0
   };
   constructor() { }
+
+  getUser(): User {
+    return this.user;
+  }
+
+  addUser(user: User): User {
+    return this.user = user;
+  }
 }

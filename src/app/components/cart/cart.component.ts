@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 import { Cart } from 'src/app/models/Cart';
 import { Product } from 'src/app/models/Product';
+import { User } from 'src/app/models/User';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { ProductService } from 'src/app/services/product/product.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,8 +13,11 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  constructor(private cartService: CartService, private productService: ProductService){}
+  constructor(private cartService: CartService, 
+    private productService: ProductService, private userService: UserService,
+    private router: Router){}
   products: Cart[] = []
+  user: User = { name: '', address: '', cardNumber: 0 };
   product: Product | null = null
   total: number = 0
   result: {items: Cart[], total: number} = {items: [], total:0 }
@@ -27,5 +33,10 @@ export class CartComponent {
     this.result = this.cartService.addToCart(quantity, this.product)
     this.total = this.result.total
     this.products = this.result.items
+  }
+
+  addUser(user: User): void {
+    this.user = this.userService.addUser(user);
+    this.router.navigate(['confirmation']);
   }
 }
