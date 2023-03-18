@@ -5,8 +5,11 @@
     margin: 6px 6px;        
     border: 1px solid #33B5E5;
   } 
+  .product-image img {
+    max-width: 100%;
+  }
   
-  .product-container {
+  .product-container{
     margin-top: 64px;
     display: flex;
     flex-wrap: wrap;
@@ -14,8 +17,15 @@
     align-items: center;
     justify-content: flex-start;
   }
+  .product-detail, .product-detail p, .product-detail button {
+    text-align: center;
+  }
+
+  button{ background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px;}
   
   .select-input {
     width: 108px; 
     margin-bottom: 8px;
+    padding: 10px 20px; 
+    display: block;
   }
