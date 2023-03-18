@@ -7,20 +7,38 @@ import { Cart } from '../../models/Cart'
 })
 export class CartService {
   items: Cart[] = [];
+  total: number = 0;
   constructor() { }
 
-  getItems(): Cart[] {
-    return this.items;
+  getCartItems(): {items: Cart[], total: number} {
+    return { items: this.items, total: this.calculateTotal(this.items)};
   } 
 
   addToCart(quantity: number, product: Product | null){
-    if(!product || !quantity) return;
+    if(product == null || quantity == null) return { items: this.items, total: this.total};
+    if(quantity === 0) {
+      return this.removeProductFromCart(product)
+    }
     const productInCart = this.items.find(item => item.id === product.id)
     if (productInCart) {
       productInCart.quantity = quantity
     } else {
       this.items.push({...product, quantity })
     }
-    return this.items;
+    return {items: this.items, total: this.calculateTotal(this.items)};
+  }
+
+  removeProductFromCart(product: Product){
+    alert("Removed from Cart!")
+    const index = this.items.findIndex(item => item.id === product.id)
+    if (index !== -1) {
+      this.items.splice(index, 1)
+    }
+    return {items: this.items, total: this.calculateTotal(this.items)};
+  }
+
+  calculateTotal(items: Cart[]): number{
+    this.total = items.map(item => item.quantity * item.price).reduce((sum, item) => sum + item);
+    return this.total;
   }
 }

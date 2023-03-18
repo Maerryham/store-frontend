@@ -1,4 +1,4 @@
-img {
+  img {
     width: 100px;
     border-radius: 10px;
   }
@@ -12,6 +12,20 @@ img {
     flex-direction: row;
     margin-bottom: 20px;
   }
+
+  .cart-item label {
+    display: block;
+  }
+
+  .form-margin input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    /* border-color: #eeeeee;
+    box-shadow: none; */
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
   
   .cart-item-details {
     display: flex;
@@ -24,6 +38,7 @@ img {
   .number-input {
     width: 80px;
     text-align: center;
+    padding: 10px;
   }
   
   .cart-container {
@@ -42,4 +57,16 @@ img {
     display: flex;
     justify-content: center;
     margin-top: 64px;
+  }
+
+  .button { 
+    background-color: blue; 
+    color: white;
+    padding: 10px; 
+    border: none; 
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+    text-align: center;
   }

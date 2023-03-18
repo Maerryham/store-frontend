@@ -38,7 +38,7 @@ export class ProductItemComponent {
 
   }
   addToCart(quantity: number): void {
-    alert('Added to cart')
     this.cartService.addToCart(quantity, this.product)
+    alert('Added to Cart!')
   }
 }
