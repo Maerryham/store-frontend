@@ -55,7 +55,6 @@ export class ProductService {
   getProductById(id: number){
     const product = this.products.find(product => product.id === id)
     if(product){ 
-      console.log('product', product)
       return product;
     }
     return null;

@@ -1,12 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { ProductItemDetailComponent } from './components/product-item-detail/product-item-detail.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        // RouterTestingModule
+        /* A module that is used to test the routing. */
+        RouterTestingModule.withRoutes([
+          {path: '',  redirectTo: '/product', pathMatch: 'full'},
+          {path: 'product', component: ProductListComponent},
+          {path: 'product/:id', component: ProductItemDetailComponent},
+          {path: 'confirmation', component: ConfirmationComponent},
+          {path: 'cart', component: CartComponent},
+        ])
       ],
       declarations: [
         AppComponent

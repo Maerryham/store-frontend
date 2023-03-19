@@ -1,7 +1,8 @@
 <form class="product-container">
     <div class="product-image">
-        
-        <img [routerLink]="['/product', product.id]" routerLinkActive="router-link-active" [src]="product.url" alt="Product Image">
+        <a [routerLink]="['/product', product.id]" routerLinkActive="router-link-active">
+            <img  [src]="product.url" alt="Product Image">
+        </a>
     </div>
     <div class="product-detail">
         <p>{{ product.name }}</p>

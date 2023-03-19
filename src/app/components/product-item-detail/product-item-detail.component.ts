@@ -29,7 +29,6 @@ export class ProductItemDetailComponent {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = params['id'];
-      console.log(id);
       this.getProductItem(+id);
     })
   }

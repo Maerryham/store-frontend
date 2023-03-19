@@ -38,7 +38,8 @@ export class CartService {
   }
 
   calculateTotal(items: Cart[]): number{
+    if(items.length === 0) return 0;
     this.total = items.map(item => item.quantity * item.price).reduce((sum, item) => sum + item);
-    return this.total;
+    return +this.total.toFixed(2); 
   }
 }

@@ -6,7 +6,7 @@
     border: 1px solid #33B5E5;
     cursor: pointer;
   } 
-  .product-image img {
+  .product-image a img {
     max-width: 100%;
   }
   
