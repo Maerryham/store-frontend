@@ -35,8 +35,8 @@ export class CartComponent {
     this.products = this.result.items
   }
 
-  addUser(user: User): void {
-    this.user = this.userService.addUser(user);
+  addUser(): void {
+    this.userService.addUser(this.user);
     this.router.navigate(['confirmation']);
   }
 }

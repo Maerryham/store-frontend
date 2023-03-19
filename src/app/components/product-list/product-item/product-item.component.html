@@ -9,7 +9,7 @@
         <p>${{ product.price }}</p>
 
         <select class="select-input" name="quantity"  [(ngModel)]="quantity">
-            <option [selected]="i === quantity" *ngFor="let item of [].constructor(5); let i = index">{{ i }}</option>
+            <option [selected]="i === quantity" *ngFor="let item of [1,2,3,4,5]; let i = index">{{ i }}</option>
         </select>
                 
         <button (click)="addToCart(+quantity)">Add to Cart</button>

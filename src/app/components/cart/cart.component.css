@@ -5,6 +5,7 @@
   
   .form-margin {
     margin-bottom: 12px;
+    width: 300px;
   }
   
   .cart-item {
@@ -63,11 +64,15 @@
   .button { 
     background-color: blue; 
     color: white;
-    padding: 10px; 
+    padding: 10px 20px;
+    font-size: 16px; 
     border: none; 
     border-radius: 5px;
     display: block;
     margin-bottom: 8px;
     text-decoration: none;
     text-align: center;
+  }
+  .button:disabled{
+    background-color: #4141f3;
   }
