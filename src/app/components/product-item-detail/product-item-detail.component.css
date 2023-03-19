@@ -5,7 +5,7 @@ img {
 
   button { 
     background-color: blue; 
-    color: white;
+    color: #ffffff;
     padding: 10px 20px; 
     border: none; 
     border-radius: 5px;
@@ -35,5 +35,5 @@ img {
   
   .back-link {
     margin-top: 20px;
-    color: #33B5E5;
+    color: #33b5e5;
   }
