@@ -11,6 +11,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HeaderComponent } from './layout/header/header.component';
 import { FormsModule } from '@angular/forms';
 
+import { SelectQuantityComponent } from './components/product-list/select-quantity/select-quantity.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     ProductItemComponent,
     ProductItemDetailComponent,
     ProductListComponent,
-    HeaderComponent
+    HeaderComponent,
+    SelectQuantityComponent
   ],
   imports: [
     BrowserModule,

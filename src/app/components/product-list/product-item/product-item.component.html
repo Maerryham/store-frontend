@@ -8,10 +8,11 @@
         <p>{{ product.name }}</p>
         <p>${{ product.price }}</p>
 
-        <select class="select-input" name="quantity"  [(ngModel)]="quantity">
+        <!-- <select class="select-input" name="quantity"  [(ngModel)]="quantity">
             <option [selected]="i === quantity" *ngFor="let item of [1,2,3,4,5]; let i = index">{{ i }}</option>
-        </select>
+        </select> -->
+        <app-select-quantity (selected)="onSelectEvent($event)"></app-select-quantity>
                 
-        <button (click)="addToCart(+quantity)">Add to Cart</button>
+        <button (click)="addToCart()">Add to Cart</button>
     </div>    
 </form>

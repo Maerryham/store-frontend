@@ -34,6 +34,11 @@ export class ProductItemDetailComponent {
   }
 
   addToCart(quantity: number): void {
+    if(quantity === 0) {
+     alert('Invalid quantity 0');
+    return;
+  }
     this.cartService.addToCart(quantity, this.product)
+    alert('Added to Cart!')
   }
 }

@@ -37,8 +37,17 @@ export class ProductItemComponent {
   ngOnInit(): void {
 
   }
-  addToCart(quantity: number): void {
-    this.cartService.addToCart(quantity, this.product)
+  addToCart(): void {
+    if(this.quantity === 0) {
+      alert('Invalid quantity 0');
+     return;
+    }
+    this.cartService.addToCart(+this.quantity, this.product)
     alert('Added to Cart!')
+  }
+
+  onSelectEvent(event: string): void {
+    console.log('event', event)
+    this.quantity = parseInt(event);
   }
 }

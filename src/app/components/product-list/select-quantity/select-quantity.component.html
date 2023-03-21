@@ -1,0 +1,5 @@
+<form>
+    <select class="select-input" name="quantity"  (change)="onSelectQuantity()" name="quantity"  [(ngModel)]="quantity">
+        <option [selected]="i === quantity" *ngFor="let item of [1,2,3,4,5]; let i = index">{{ i }}</option>
+    </select>
+</form>

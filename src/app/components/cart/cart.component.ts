@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {Router} from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { Cart } from 'src/app/models/Cart';
 import { Product } from 'src/app/models/Product';
 import { User } from 'src/app/models/User';
@@ -22,6 +23,7 @@ export class CartComponent {
   total: number = 0
   result: {items: Cart[], total: number} = {items: [], total:0 }
 
+
   ngOnInit(): void {
     this.result = this.cartService.getCartItems()
     this.total = this.result.total
@@ -38,5 +40,8 @@ export class CartComponent {
   addUser(): void {
     this.userService.addUser(this.user);
     this.router.navigate(['confirmation']);
+  }
+  validateName(name: string){
+    console.log("Name Changed " + name);
   }
 }
