@@ -12,6 +12,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FormsModule } from '@angular/forms';
 
 import { SelectQuantityComponent } from './components/product-list/select-quantity/select-quantity.component';
+import { ProductService } from './services/product/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,10 @@ import { SelectQuantityComponent } from './components/product-list/select-quanti
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [AppRoutingModule],
+  providers: [AppRoutingModule, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

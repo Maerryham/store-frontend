@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Product } from '../../models/Product';
 
 @Injectable({
@@ -6,7 +8,8 @@ import { Product } from '../../models/Product';
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
   products : Product[] = [
     {
       "id": 1,
@@ -52,6 +55,10 @@ export class ProductService {
     }
   ];
 
+  getAllProducts(): Observable<Product[]>{
+    return this.http.get<Product[]>('assets/data.json');
+  }
+
   getProductById(id: number){
     const product = this.products.find(product => product.id === id)
     if(product){ 
@@ -60,7 +67,7 @@ export class ProductService {
     return null;
   }
 
-  getAllProducts() {
+  getAllProductsOld() {
     return this.products;
   }
 }

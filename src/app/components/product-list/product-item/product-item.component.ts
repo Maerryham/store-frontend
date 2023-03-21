@@ -39,7 +39,7 @@ export class ProductItemComponent {
   }
   addToCart(): void {
     if(this.quantity === 0) {
-      alert('Invalid quantity 0');
+     alert('Invalid quantity 0');
      return;
     }
     this.cartService.addToCart(+this.quantity, this.product)
@@ -47,7 +47,6 @@ export class ProductItemComponent {
   }
 
   onSelectEvent(event: string): void {
-    console.log('event', event)
     this.quantity = parseInt(event);
   }
 }
